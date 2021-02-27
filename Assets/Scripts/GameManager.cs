@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float shakeMagnitude;
     public float shakeSpeed;
     private bool activated1 = false;
+    public Animator rockHandler;
 
     private void Start()
     {
@@ -51,11 +52,14 @@ public class GameManager : MonoBehaviour
 
             Quaternion newRotation = Quaternion.AngleAxis(0, Vector3.up);
 
+            rockHandler.SetBool("Play", true);
+
             while (player.transform.localRotation != new Quaternion(0, 0, 0, 0))
             {
                 player.transform.localRotation = Quaternion.Slerp(player.transform.rotation, newRotation, .05f);
                 yield return null;
             }
+            
 
             Debug.Log("Broke out of loop");
             playerMovement.enabled = true;
