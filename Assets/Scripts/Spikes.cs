@@ -5,46 +5,34 @@ using UnityEngine;
 public class Spikes : InteractableObject
 {
 
-    public float expandTime;
-    public float retractTime;
-    public float loopDelay;
+    public float delay;
 
-    public Vector3 expandOffset;
-
-    private bool expanded = false;
-
-    private Vector3 startPos;
-    private Vector3 endPos;
+    private Animator animator;
 
     private void Start()
     {
-        startPos = transform.position;
-        endPos = startPos + expandOffset;
+        animator = GetComponent<Animator>();
         StartCoroutine(ActiveSpikes());
+    }
+
+    public override void ActivateToggle()
+    {
+        base.ActivateToggle();
+        if (active)
+        {
+            StartCoroutine(ActiveSpikes());
+        }
     }
 
     private IEnumerator ActiveSpikes()
     {
-        while (active || expanded)
+        while (active)
         {
-            if (!expanded)
-            {
-                FindObjectOfType<AudioManager>().PlayAt("Spikes", transform.position);
-                transform.position = endPos;
-                GetComponent<BoxCollider>().enabled = true;
-                yield return new WaitForSeconds(expandTime);
-                expanded = true;
-            }
-            else
-            {
-                yield return new WaitForSeconds(retractTime);
-                transform.position = startPos;
-                GetComponent<BoxCollider>().enabled = false;
-                expanded = false;
-                yield return new WaitForSeconds(loopDelay);
-            }
+            animator.SetBool("expand", true);
+            GetComponent<AudioSource>().Play();
+            yield return new WaitForSeconds(1.0f);
+            animator.SetBool("expand", false);
+            yield return new WaitForSeconds(delay);
         }
-        
     }
-
 }

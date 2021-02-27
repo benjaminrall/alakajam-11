@@ -28,8 +28,9 @@ public class FloorButton : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Button");
             foreach (InteractableObject obj in affectedObjects)
             {
-                obj.active = !obj.active;
+                obj.ActivateToggle();
             }
+            activated = true;
         }
     }
 
