@@ -4,95 +4,36 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody rb;
+    public GameManager gameManager;
+    public float deathFadeDelay;
 
-    public float maxWalkingSpeed;
-    public float maxRunningSpeed;
-    
-    public float accelerationTime;
-    public float decelerationTime;
+    private Vector3 previousCheckpoint;
 
-    private float acceleration;
-    private float deceleration;
-
-    private float velocity;
-    private float maxVelocity;
-
-    private bool running;
-    private float ax;
-
-    private bool decelerating;
-
-    private void Awake()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        maxVelocity = maxWalkingSpeed;
-        acceleration = maxVelocity / (accelerationTime);
-        deceleration = maxVelocity / (decelerationTime);
-        running = false;
-        ax = 0.0f;
-        decelerating = false;
+        previousCheckpoint = transform.position;
     }
 
-    private void Update()
+    private void OnTriggerEnter (Collider other)
     {
-        running = Input.GetButton("KSprint") || Input.GetAxis("CSprint") > 0;
-        ax = Input.GetAxis("Horizontal");
-
-        if (running) 
-        { 
-            maxVelocity = maxRunningSpeed; 
-            decelerating = false; 
-        }
-        else 
-        { 
-            maxVelocity = maxWalkingSpeed; 
-            if ((velocity > 0 && velocity > maxVelocity * ax) || (velocity < 0 && velocity < maxVelocity * ax)) decelerating = true; 
-        }
-
-        // Positive Acceleration
-        if (ax > 0 && velocity >= 0 && !decelerating)
+        switch(other.tag)
         {
-            velocity += acceleration;
-            if (velocity > maxVelocity * ax)
-            {
-                velocity = maxVelocity * ax;
-            }
+            case "Spikes": StartCoroutine(Die("SpikesDeath")); break;
+            case "FloorButton": other.gameObject.GetComponent<FloorButton>().Activate(); break;
         }
-        // Negative Acceleration
-        else if (ax < 0 && velocity <= 0 && !decelerating)
-        {
-            velocity -= acceleration;
-            if (velocity < maxVelocity * ax)
-            {
-                velocity = maxVelocity * ax;
-            }
-        }
-        // Deceleration
-        else if (decelerating || ax == 0 && velocity != 0 || ax > 0 && velocity < 0 || ax < 0 && velocity > 0)
-        {
-            if (velocity < 0)
-            {
-                velocity += deceleration;
-                if (velocity > 0)
-                {
-                    velocity = 0;
-                }
-            }
-            else if (velocity > 0)
-            {
-                velocity -= deceleration;
-                if (velocity < 0)
-                {
-                    velocity = 0;
-                }
-            }
-        }
-
-        // Decelerating from sprint to walk
-        if (decelerating && ((velocity > 0 && velocity < maxVelocity * ax) || (velocity < 0 && velocity > maxVelocity * ax) || velocity == 0))
-            decelerating = false;
-
-        rb.velocity = new Vector3(velocity, rb.velocity.y, rb.velocity.z);
     }
+    private IEnumerator Die(string type)
+    {
+        FindObjectOfType<AudioManager>().Play(type);
+        gameObject.GetComponent<PlayerMovement>().enabled = false;
+        gameObject.GetComponent<PlayerMovement>().velocity = 0.0f;
+        gameManager.FadeIn(deathFadeDelay);
+        yield return new WaitForSeconds(deathFadeDelay);
+        transform.position = previousCheckpoint;
+        yield return new WaitForSeconds(deathFadeDelay);
+        gameManager.FadeOut(deathFadeDelay);
+        yield return new WaitForSeconds(deathFadeDelay);
+        gameObject.GetComponent<PlayerMovement>().enabled = true;
+    }
+
 }
