@@ -7,6 +7,7 @@ TagManager:
   - Spikes
   - FloorButton
   - Torch
+  - GameStart
   layers:
   - Default
   - TransparentFX

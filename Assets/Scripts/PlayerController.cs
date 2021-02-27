@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
             case "Spikes": StartCoroutine(Die("SpikesDeath")); break;
             case "FloorButton": other.gameObject.GetComponent<FloorButton>().Activate(); break;
             case "Torch": EnableChildren(other.transform); break;
+            case "GameStart": gameManager.GameStart(); break;
         }
     }
     private IEnumerator Die(string type)
