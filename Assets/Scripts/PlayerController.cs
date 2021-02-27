@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
         {
             case "Spikes": StartCoroutine(Die("SpikesDeath")); break;
             case "FloorButton": other.gameObject.GetComponent<FloorButton>().Activate(); break;
+            case "Torch": EnableChildren(other.transform); break;
         }
     }
     private IEnumerator Die(string type)
@@ -36,4 +37,11 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<PlayerMovement>().enabled = true;
     }
 
+    private void EnableChildren(Transform parent)
+    {
+        foreach(Transform child in parent)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
 }

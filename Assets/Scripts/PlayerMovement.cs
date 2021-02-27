@@ -55,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
         // Positive Acceleration
         if (ax > 0 && velocity >= 0 && !decelerating)
         {
+            Quaternion newRotation = Quaternion.AngleAxis(0, Vector3.up);
+            transform.localRotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);
             velocity += acceleration;
             if (velocity > maxVelocity * ax)
             {
@@ -64,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
         // Negative Acceleration
         else if (ax < 0 && velocity <= 0 && !decelerating)
         {
+            Quaternion newRotation = Quaternion.AngleAxis(180, Vector3.up);
+            transform.localRotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);
             velocity -= acceleration;
             if (velocity < maxVelocity * ax)
             {

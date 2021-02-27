@@ -11,7 +11,7 @@ public class Spikes : InteractableObject
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         StartCoroutine(ActiveSpikes());
     }
 
@@ -29,7 +29,7 @@ public class Spikes : InteractableObject
         while (active)
         {
             animator.SetBool("expand", true);
-            GetComponent<AudioSource>().Play();
+            GetComponentInChildren<AudioSource>().Play();
             yield return new WaitForSeconds(1.0f);
             animator.SetBool("expand", false);
             yield return new WaitForSeconds(delay);

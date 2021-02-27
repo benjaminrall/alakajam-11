@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7845348139075822565}
+  - component: {fileID: 1113582254}
   m_Layer: 0
   m_Name: FloorSpikes
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113582254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470229593284327775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325a7eb97afb7ff438de148c7ef932f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  delay: 2
 --- !u!1 &7689524570176344297
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +59,6 @@ GameObject:
   - component: {fileID: 3185452224203912998}
   - component: {fileID: 9088617697674189251}
   - component: {fileID: 134072484746536819}
-  - component: {fileID: 4236715152554652868}
   - component: {fileID: 764409198}
   - component: {fileID: 3443988622481184791}
   m_Layer: 0
@@ -130,20 +144,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.015709987, y: 0.01570999, z: 0.015108992}
   m_Center: {x: 0, y: 0, z: -0.0070060133}
---- !u!114 &4236715152554652868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7689524570176344297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325a7eb97afb7ff438de148c7ef932f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  delay: 2
 --- !u!95 &764409198
 Animator:
   serializedVersion: 3

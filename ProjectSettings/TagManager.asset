@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spikes
   - FloorButton
+  - Torch
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - Ignore Lighting
   - 
   - 
   - 
