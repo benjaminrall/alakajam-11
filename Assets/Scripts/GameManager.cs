@@ -54,14 +54,14 @@ public class GameManager : MonoBehaviour
 
             rockHandler.SetBool("Play", true);
 
-            while (player.transform.localRotation != new Quaternion(0, 0, 0, 0))
+            while (player.transform.localRotation != new Quaternion(0, 0, 0, -1))
             {
                 player.transform.localRotation = Quaternion.Slerp(player.transform.rotation, newRotation, .05f);
                 yield return null;
             }
-            
 
-            Debug.Log("Broke out of loop");
+
+            yield return new WaitForSeconds(3.0f);
             playerMovement.enabled = true;
             cam.gameObject.GetComponentInChildren<ParticleSystem>().Play();
             activated1 = true;
