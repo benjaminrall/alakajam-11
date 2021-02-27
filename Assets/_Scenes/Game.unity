@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 42981500}
   smoothSpeed: 0.125
-  offset: {x: 1, y: 3, z: -20}
+  offset: {x: 0, y: 3, z: -20}
 --- !u!1 &413625627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3755258163778833965, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
@@ -1053,9 +1053,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: {fileID: 672502631}
-  shakeDuration: 1
-  shakeMagnitude: 0.2
-  shakeSpeed: 20
+  shakeDuration: 5
+  shakeMagnitude: 0.1
+  shakeSpeed: 15
 --- !u!1001 &1214619167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1510,7 +1510,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -6481,7 +6481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6092911105008139267, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 6092911105008139267, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: m_LocalPosition.z

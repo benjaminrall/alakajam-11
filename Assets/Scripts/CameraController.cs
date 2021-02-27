@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
     {
 
         float elapsed = 0.0f;
-        float delay = duration / speed;
+        float delay = 1 / speed;
 
         Vector3 targetPosition;
 
