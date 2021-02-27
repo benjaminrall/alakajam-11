@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1424701533677174622}
   - component: {fileID: 3756416841129970580}
   - component: {fileID: 919132149181989996}
-  - component: {fileID: 1017202912293863129}
+  - component: {fileID: 1987906167}
   m_Layer: 0
   m_Name: FloorButton
   m_TagString: FloorButton
@@ -96,10 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateOffset: {x: 0, y: -0.06, z: 0}
-  affectedObjects:
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!65 &1017202912293863129
+  affectedObjects: []
+--- !u!65 &1987906167
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +108,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.011769224, y: 0.011769221, z: 0.020994548}
-  m_Center: {x: 0, y: 0.0000000019067015, z: 0.010497286}
+  m_Size: {x: 1.1769224, y: 1.1769221, z: 3}
+  m_Center: {x: 4.376802e-15, y: -0.000000071840404, z: 1.5}
