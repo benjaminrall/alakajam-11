@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndActivation : InteractableObject
 {
-    public GameManager gameManager;    
+    public GameManager gameManager;
+    public TimerScript timerScript;
 
     public override void ActivateToggle()
     {
@@ -15,6 +16,8 @@ public class EndActivation : InteractableObject
     private IEnumerator LoadEndScene()
     {
         gameManager.FadeIn(1.0f);
+
+        timerScript.StopTimer();
 
         yield return new WaitForSeconds(1.0f);
 

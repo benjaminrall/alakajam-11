@@ -2546,6 +2546,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4059fad322bc6ea4c8a6265d5a8ad3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &952235251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952235253}
+  - component: {fileID: 952235252}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &952235252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952235251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01909124fcec2449bc38b6da84db8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Milliseconds: 0
+  Seconds: 0
+  Minutes: 0
+  TimerActive: 1
+  FinalTime: 
+--- !u!4 &952235253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952235251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.01218, y: -7.3981667, z: 103.80195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &964597248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21394,6 +21442,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 3870032197516721490, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870032197516721490, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1102923952}
+    - target: {fileID: 3870032197516721490, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: timerScript
+      value: 
+      objectReference: {fileID: 952235252}
     - target: {fileID: 3870032197516721491, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -21436,6 +21496,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3870032197516721491, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480631636672474111, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480631637194818924, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8480631637776656724, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

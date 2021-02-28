@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   gameManager: {fileID: 0}
+  timerScript: {fileID: 0}
 --- !u!1001 &3870032197723095702
 PrefabInstance:
   m_ObjectHideFlags: 0
