@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
     public Vector3[] rockSpawns;
     public GameObject[] rocks;
 
+    [Header("Checkpoints")]
+    public GameObject[] rooms;
+    public GameObject[] checkpoints;
+    private int currentRoom = 0;
+    private GameObject storedRoom;
+
     private List<GameObject> spawnedRocks;
 
     private void Start()
@@ -132,5 +138,21 @@ public class GameManager : MonoBehaviour
         StartCoroutine(player.Die("Snap"));
 
         yield return null;
+    }
+
+    public void UpdateCheckpoint(GameObject checkpoint)
+    {
+        int newCheckpoint = Array.IndexOf(checkpoints, checkpoint);
+        if (newCheckpoint > currentRoom)
+        {
+            currentRoom = newCheckpoint;
+            storedRoom = Instantiate(rooms[currentRoom]);
+            storedRoom.SetActive(false);
+        }
+    }
+
+    public void ResetRoom()
+    {
+
     }
 }
