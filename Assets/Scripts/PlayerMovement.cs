@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     
     public float accelerationTime;
     public float decelerationTime;
+
+    public float footstepDelay;
+    private float footstepTimer;
     
     private float acceleration;
     private float deceleration;
@@ -100,5 +103,12 @@ public class PlayerMovement : MonoBehaviour
             decelerating = false;
 
         rb.velocity = new Vector3(velocity, rb.velocity.y, rb.velocity.z);
+
+        footstepTimer += Time.deltaTime;
+        if (footstepTimer > footstepDelay && Mathf.Abs(velocity) > 0)
+        {
+            FindObjectOfType<AudioManager>().Play("StoneStep");
+            footstepTimer = 0.0f;
+        }
     }
 }

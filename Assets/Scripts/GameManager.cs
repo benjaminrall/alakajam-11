@@ -21,10 +21,30 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         fade.gameObject.SetActive(true);
-        fade.canvasRenderer.SetAlpha(0.0f);
 
         player = FindObjectOfType<PlayerController>();
         cam = FindObjectOfType<CameraController>();
+
+        StartCoroutine(BeginningFade());
+    }
+
+    private IEnumerator BeginningFade()
+    {
+        PlayerMovement playerMovement = player.gameObject.GetComponent<PlayerMovement>();
+
+        while (!playerMovement)
+        {
+            playerMovement = player.gameObject.GetComponent<PlayerMovement>();
+        }
+
+        playerMovement.velocity = 0.0f;
+        playerMovement.enabled = false;
+
+        yield return new WaitForSeconds(1.0f);
+
+        FadeOut(2.0f);
+
+        playerMovement.enabled = true;
     }
 
     public void FadeIn(float delay)
@@ -42,6 +62,7 @@ public class GameManager : MonoBehaviour
         if (!activated1)
         {
             StartCoroutine(cam.Shake(shakeDuration, shakeMagnitude, shakeSpeed));
+            FindObjectOfType<AudioManager>().Play("VibrationRumble");
 
             PlayerMovement playerMovement = player.gameObject.GetComponent<PlayerMovement>();
 
@@ -53,7 +74,7 @@ public class GameManager : MonoBehaviour
             Quaternion newRotation = Quaternion.AngleAxis(0, Vector3.up);
 
             rockHandler.SetBool("Play", true);
-            FindObjectOfType<AudioManager>().Play("CaveIn");
+            FindObjectOfType<AudioManager>().Play("CaveIn");    
 
             while (player.transform.localRotation != new Quaternion(0, 0, 0, -1) && player.transform.localRotation != new Quaternion(0, 0, 0, 0) && player.transform.localRotation != new Quaternion(0, 0, 0, 1))
             {
@@ -62,7 +83,7 @@ public class GameManager : MonoBehaviour
             }
 
 
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(2.0f);
             playerMovement.enabled = true;
             cam.gameObject.GetComponentInChildren<ParticleSystem>().Play();
             activated1 = true;
