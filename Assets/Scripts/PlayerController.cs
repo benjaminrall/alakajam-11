@@ -49,12 +49,14 @@ public class PlayerController : MonoBehaviour
             case "FallSequence": if (hasJewel) StartCoroutine(gameManager.FallSequence()); break;
             case "Jewel": if (!hasJewel) inJewel = true; break;
             case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;
+            case "ToggleButton": other.gameObject.GetComponent<ToggleableButton>().Activate(); break;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Jewel" && inJewel && !hasJewel) inJewel = false;
+        else if (other.tag == "ToggleButton") StartCoroutine(other.gameObject.GetComponent<ToggleableButton>().Deactivate());
     }
 
     public IEnumerator Die(string type)

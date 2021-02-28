@@ -13,6 +13,7 @@ TagManager:
   - LogTrap
   - Jewel
   - FallSequence
+  - ToggleButton
   layers:
   - Default
   - TransparentFX
