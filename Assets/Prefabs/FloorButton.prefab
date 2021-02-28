@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2624004198014333179}
   - component: {fileID: 1424701533677174622}
   - component: {fileID: 3756416841129970580}
-  - component: {fileID: 919132149181989996}
   - component: {fileID: 1987906167}
+  - component: {fileID: 1560897777}
   m_Layer: 0
   m_Name: FloorButton
   m_TagString: FloorButton
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &919132149181989996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3396142133021207105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0947162105310643abc0d8a7e13b2ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateOffset: {x: 0, y: -0.06, z: 0}
-  affectedObjects: []
 --- !u!65 &1987906167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,3 +96,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1769224, y: 1.1769221, z: 3}
   m_Center: {x: 4.376802e-15, y: -0.000000071840404, z: 1.5}
+--- !u!114 &1560897777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396142133021207105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f611e59f66c9786489497f6c663fdb9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateOffset: {x: 0, y: -0.06, z: 0}
+  affectedObjects:
+  - {fileID: 0}
