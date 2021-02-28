@@ -18575,8 +18575,6 @@ MeshCollider:
 --- !u!1 &1756543951
 GameObject:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 =======
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18666,8 +18664,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563988979625235607, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< Updated upstream
       value: 7
 =======
       value: 8
@@ -18924,6 +18920,7 @@ ParticleSystemRenderer:
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
@@ -28520,8 +28517,6 @@ Transform:
   m_Father: {fileID: 543450652493806068}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 --- !u!1 &1890638843
 GameObject:
   m_ObjectHideFlags: 0
