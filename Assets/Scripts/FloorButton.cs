@@ -9,10 +9,10 @@ public class FloorButton : MonoBehaviour
 
     public InteractableObject[] affectedObjects;
 
-    private Vector3 startPos;
+    protected Vector3 startPos;
     private Vector3 endPos;
 
-    private bool activated = false;
+    protected bool activated = false;
 
     private void Start()
     {
@@ -33,5 +33,4 @@ public class FloorButton : MonoBehaviour
             activated = true;
         }
     }
-
 }
