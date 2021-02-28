@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().UpdateBrightness(GameObject.Find("AudioManager").GetComponent<AudioManager>().currentBrightness);
+
         fade.gameObject.SetActive(true);
 
         player = FindObjectOfType<PlayerController>();

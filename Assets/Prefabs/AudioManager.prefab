@@ -60,7 +60,56 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Button
     soundType: 2
-    clip: {fileID: 8300000, guid: cde39e006acd4e442911efebaf52fa89, type: 3}
+    clip: {fileID: 8300000, guid: cb985a10c7893ca43befd95ec94bfaea, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorSlide
+    soundType: 2
+    clip: {fileID: 8300000, guid: 1b06597e151542441b89326a1c3f384b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CaveIn
+    soundType: 2
+    clip: {fileID: 8300000, guid: 5832abcc963da384c9c1c6ac3e715fb1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TorchLit
+    soundType: 2
+    clip: {fileID: 8300000, guid: d9b815df0c47b444399fbd6798c88d4d, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TorchAmbient
+    soundType: 2
+    clip: {fileID: 8300000, guid: 8d67e1127984a2c4ab034bad6591a267, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: StoneStep
+    soundType: 2
+    clip: {fileID: 8300000, guid: cd3c3c23c89289446bc332ef9b9f0ba1, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GrassStep
+    soundType: 2
+    clip: {fileID: 8300000, guid: bffbd1e2ade410c44afedb78fad82428, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: VibrationRumble
+    soundType: 2
+    clip: {fileID: 8300000, guid: a7d81c105e9174546b28c6390fd347a8, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -68,3 +117,4 @@ MonoBehaviour:
   masterMixer: {fileID: 24300002, guid: 59c01a84d0919ae4996ec57aa3810743, type: 2}
   musicMixer: {fileID: 2665848391134140679, guid: 59c01a84d0919ae4996ec57aa3810743, type: 2}
   soundMixer: {fileID: -8056541624674354906, guid: 59c01a84d0919ae4996ec57aa3810743, type: 2}
+  currentBrightness: 0
