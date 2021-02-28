@@ -8,12 +8,16 @@ public class PlayerController : MonoBehaviour
     public float deathFadeInDelay;
     public float deathFadeOutDelay;
 
+    private bool jewel;
+
     private Vector3 previousCheckpoint;
 
     private void Start()
     {
         previousCheckpoint = transform.position;
-        FindObjectOfType<AudioManager>().Play("TorchAmbient");
+        // FindObjectOfType<AudioManager>().Play("TorchAmbient");
+
+        jewel = false;
     }
 
     private void OnTriggerEnter (Collider other)
@@ -26,6 +30,7 @@ public class PlayerController : MonoBehaviour
             case "Torch": EnableChildren(other.transform); other.gameObject.GetComponent<Torch>().ActivateToggle(); break;
             case "GameStart": StartCoroutine(gameManager.GameStart()); break;
             case "FallSequence": break;
+            case "Jewel": break;
             case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;
         }
     }
