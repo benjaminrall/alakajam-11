@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class CrateRope : InteractableObject
 {
+
+    public Rigidbody crate;
+
     public override void ActivateToggle()
     {
         if (!active) active = true;
-        else gameObject.SetActive(false);
+        else
+        {
+            gameObject.SetActive(false);
+            crate.constraints = RigidbodyConstraints.None;
+            crate.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
+        }
     }
 }

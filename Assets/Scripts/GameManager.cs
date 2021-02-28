@@ -27,8 +27,9 @@ public class GameManager : MonoBehaviour
     [Header("Checkpoints")]
     public GameObject[] rooms;
     public GameObject[] checkpoints;
-    private int currentRoom = 0;
+    public int currentRoom = -1;
     private GameObject storedRoom;
+    private GameObject activeRoom;
 
     private List<GameObject> spawnedRocks;
 
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
         spawnedRocks = new List<GameObject>(rockSpawns.Length);
 
         StartCoroutine(BeginningFade());
+
+        currentRoom = -1;
     }
 
     private IEnumerator BeginningFade()
@@ -146,6 +149,7 @@ public class GameManager : MonoBehaviour
         if (newCheckpoint > currentRoom)
         {
             currentRoom = newCheckpoint;
+            activeRoom = rooms[currentRoom];
             storedRoom = Instantiate(rooms[currentRoom]);
             storedRoom.SetActive(false);
         }
@@ -153,6 +157,12 @@ public class GameManager : MonoBehaviour
 
     public void ResetRoom()
     {
-
+        if (storedRoom != null && activeRoom != null)
+        {
+            Destroy(activeRoom);
+            GameObject newRoom = Instantiate(storedRoom);
+            newRoom.SetActive(true);
+            activeRoom = newRoom;
+        }
     }
 }
