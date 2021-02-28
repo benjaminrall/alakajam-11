@@ -116,17 +116,18 @@ public class GameManager : MonoBehaviour
         playerMovement.velocity = 0.0f;
         playerMovement.enabled = false;
 
-        yield return new WaitForSeconds(1.0f);
+        System.Random r = new System.Random();
 
         FindObjectOfType<AudioManager>().Play("CaveIn");
-
-        System.Random r = new System.Random();
 
         foreach (Vector3 rockSpawn in rockSpawns)
         {
             Instantiate(rocks[r.Next(0, rocks.Length)], rockSpawn, new Quaternion(r.Next(0, 91), r.Next(0, 360), r.Next(0, 91), 1));
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.18f);
         }
+
+        yield return new WaitForSeconds(0.5f);
+
 
         StartCoroutine(player.Die("Snap"));
 
