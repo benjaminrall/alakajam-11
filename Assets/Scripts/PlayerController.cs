@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour
     public float deathFadeInDelay;
     public float deathFadeOutDelay;
 
-    private bool jewel;
+    private bool hasJewel;
+    private bool inJewel;
+
+    public GameObject jewel;
+    public GameObject playerJewel;
 
     private Vector3 previousCheckpoint;
 
@@ -17,7 +21,17 @@ public class PlayerController : MonoBehaviour
         previousCheckpoint = transform.position;
         // FindObjectOfType<AudioManager>().Play("TorchAmbient");
 
-        jewel = false;
+        hasJewel = false;
+        inJewel = false;
+    }
+
+    private void Update()
+    {
+        if (inJewel && !hasJewel && Input.GetKeyDown(KeyCode.E))
+        {
+            hasJewel = true;
+            GetJewel();
+        }
     }
 
     private void OnTriggerEnter (Collider other)
@@ -29,11 +43,17 @@ public class PlayerController : MonoBehaviour
             case "FloorButton": other.gameObject.GetComponent<FloorButton>().Activate(); break;
             case "Torch": EnableChildren(other.transform); other.gameObject.GetComponent<Torch>().ActivateToggle(); break;
             case "GameStart": StartCoroutine(gameManager.GameStart()); break;
-            case "FallSequence": break;
-            case "Jewel": break;
+            case "FallSequence": if (hasJewel) StartCoroutine(gameManager.FallSequence()); break;
+            case "Jewel": if (!hasJewel) inJewel = true; break;
             case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Jewel" && inJewel && !hasJewel) inJewel = false;
+    }
+
     private IEnumerator Die(string type)
     {
         FindObjectOfType<AudioManager>().Play(type);
@@ -54,5 +74,12 @@ public class PlayerController : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
+    }
+
+    private void GetJewel()
+    {
+        jewel.SetActive(false);
+        playerJewel.SetActive(true);
+        Debug.Log("Got jewel");
     }
 }

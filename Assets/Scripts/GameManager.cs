@@ -91,4 +91,17 @@ public class GameManager : MonoBehaviour
             activated1 = true;
         }
     }
+
+    public void Rumble()
+    {
+        StartCoroutine(cam.Shake(shakeDuration, shakeMagnitude, shakeSpeed));
+        FindObjectOfType<AudioManager>().Play("VibrationRumble");
+    }
+
+    public IEnumerator FallSequence()
+    {
+        StartCoroutine(cam.Shake(shakeDuration, shakeMagnitude, shakeSpeed));
+        FindObjectOfType<AudioManager>().Play("VibrationRumble");
+        yield return null;
+    }
 }
