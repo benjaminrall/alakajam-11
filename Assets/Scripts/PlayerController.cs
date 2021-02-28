@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
             case "Jewel": if (!hasJewel) inJewel = true; break;
             case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;
             case "ToggleButton": other.gameObject.GetComponent<ToggleableButton>().Activate(); break;
+            case "Checkpoint": gameManager.UpdateCheckpoint(other.gameObject); previousCheckpoint = other.transform.position; break;
         }
     }
 
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<PlayerMovement>().velocity = 0.0f;
         gameManager.FadeIn(deathFadeInDelay);
         yield return new WaitForSeconds(deathFadeInDelay);
+        gameManager.ResetRoom();
         transform.position = previousCheckpoint;
         yield return new WaitForSeconds(deathFadeOutDelay);
         gameManager.FadeOut(deathFadeOutDelay);
