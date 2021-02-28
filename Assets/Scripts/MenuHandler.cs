@@ -19,6 +19,8 @@ public class MenuHandler : MonoBehaviour
         fade.gameObject.SetActive(true);
         fade.canvasRenderer.SetAlpha(0.0f);
         optionsMenu.SetActive(false);
+
+        FindObjectOfType<AudioManager>().Play("TorchAmbient");
     }
 
     public void Play()

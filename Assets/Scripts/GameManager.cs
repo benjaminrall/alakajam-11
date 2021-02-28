@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +20,12 @@ public class GameManager : MonoBehaviour
     private bool activated1 = false;
     public Animator rockHandler;
 
+    [Header("Fall Sequence")]
+    public Vector3[] rockSpawns;
+    public GameObject[] rocks;
+
+    private List<GameObject> spawnedRocks;
+
     private void Start()
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().UpdateBrightness(GameObject.Find("AudioManager").GetComponent<AudioManager>().currentBrightness);
@@ -26,6 +34,8 @@ public class GameManager : MonoBehaviour
 
         player = FindObjectOfType<PlayerController>();
         cam = FindObjectOfType<CameraController>();
+
+        spawnedRocks = new List<GameObject>(rockSpawns.Length);
 
         StartCoroutine(BeginningFade());
     }
@@ -63,8 +73,7 @@ public class GameManager : MonoBehaviour
     {
         if (!activated1)
         {
-            StartCoroutine(cam.Shake(shakeDuration, shakeMagnitude, shakeSpeed));
-            FindObjectOfType<AudioManager>().Play("VibrationRumble");
+            Rumble();
 
             PlayerMovement playerMovement = player.gameObject.GetComponent<PlayerMovement>();
 
@@ -100,8 +109,27 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator FallSequence()
     {
-        StartCoroutine(cam.Shake(shakeDuration, shakeMagnitude, shakeSpeed));
-        FindObjectOfType<AudioManager>().Play("VibrationRumble");
+        Rumble();
+
+        PlayerMovement playerMovement = player.gameObject.GetComponent<PlayerMovement>();
+
+        playerMovement.velocity = 0.0f;
+        playerMovement.enabled = false;
+
+        yield return new WaitForSeconds(1.0f);
+
+        FindObjectOfType<AudioManager>().Play("CaveIn");
+
+        System.Random r = new System.Random();
+
+        foreach (Vector3 rockSpawn in rockSpawns)
+        {
+            Instantiate(rocks[r.Next(0, rocks.Length)], rockSpawn, new Quaternion(r.Next(0, 91), r.Next(0, 360), r.Next(0, 91), 1));
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        StartCoroutine(player.Die("Snap"));
+
         yield return null;
     }
 }

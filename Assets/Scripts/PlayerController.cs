@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     public GameObject jewel;
     public GameObject playerJewel;
 
+    public Vector3 startPos;
+
     private Vector3 previousCheckpoint;
 
     private void Start()
     {
-        previousCheckpoint = transform.position;
-        // FindObjectOfType<AudioManager>().Play("TorchAmbient");
+        previousCheckpoint = startPos;
+        
 
         hasJewel = false;
         inJewel = false;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         if (inJewel && !hasJewel && Input.GetKeyDown(KeyCode.E))
         {
             hasJewel = true;
+            gameManager.Rumble();
             GetJewel();
         }
     }
@@ -54,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Jewel" && inJewel && !hasJewel) inJewel = false;
     }
 
-    private IEnumerator Die(string type)
+    public IEnumerator Die(string type)
     {
         FindObjectOfType<AudioManager>().Play(type);
         gameObject.GetComponent<PlayerMovement>().enabled = false;
@@ -80,6 +83,5 @@ public class PlayerController : MonoBehaviour
     {
         jewel.SetActive(false);
         playerJewel.SetActive(true);
-        Debug.Log("Got jewel");
     }
 }

@@ -4422,6 +4422,16 @@ MonoBehaviour:
   shakeMagnitude: 0.1
   shakeSpeed: 15
   rockHandler: {fileID: 376099626}
+  rockSpawns: []
+  rocks:
+  - {fileID: 5613351334137537747, guid: b9e9861967304034ab37ba314848a481, type: 3}
+  - {fileID: 7081830072027065846, guid: 954b29db616080844b775108c808b63c, type: 3}
+  - {fileID: 3655745588222211811, guid: 0e6ce4ca1cda692468bf086b20e81418, type: 3}
+  - {fileID: 4482512336220990785, guid: 85229341ac2c21d43b97cc6b08014d5f, type: 3}
+  - {fileID: 1009950071562968583, guid: 8651326633476e14e9f5d9971c9483dd, type: 3}
+  - {fileID: 6827515333844468774, guid: b5a6968ac56d8c9429b7afe6e3c8bb82, type: 3}
+  - {fileID: 1830566284939093246, guid: dd590de2100b60a48b3b30b62bf440a7, type: 3}
+  - {fileID: 8001076611557038393, guid: 3ba2302f77841c84d93fdf450f4d1f8d, type: 3}
 --- !u!1001 &1126212349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9961,7 +9971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624004198014333179, guid: 912786794ef62f24295ce2d7a29bba03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.45
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 2624004198014333179, guid: 912786794ef62f24295ce2d7a29bba03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29987,6 +29997,10 @@ PrefabInstance:
       propertyPath: jewel
       value: 
       objectReference: {fileID: 919132147657378713}
+    - target: {fileID: 6092911105430253144, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: startPos.y
+      value: 32.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6092911105430253144, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: gameManager
       value: 
