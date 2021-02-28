@@ -114,13 +114,6 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Snap
-    soundType: 2
-    clip: {fileID: 8300000, guid: 5ab5fb4db4ca611409448c1a765bfc65, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   masterMixer: {fileID: 24300002, guid: 59c01a84d0919ae4996ec57aa3810743, type: 2}
   musicMixer: {fileID: 2665848391134140679, guid: 59c01a84d0919ae4996ec57aa3810743, type: 2}
   soundMixer: {fileID: -8056541624674354906, guid: 59c01a84d0919ae4996ec57aa3810743, type: 2}
