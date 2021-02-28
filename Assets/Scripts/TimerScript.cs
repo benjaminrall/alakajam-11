@@ -21,16 +21,16 @@ public class TimerScript : MonoBehaviour
     {
         if (TimerActive == true)
         {
-            Milliseconds -= 1;
-            if (Milliseconds <= 0)
+            Milliseconds = Milliseconds + 1;
+            if (Milliseconds == 60)
             {
-                Seconds -= 1;
-                Milliseconds = 59;
+                Seconds = Seconds + 1;
+                Milliseconds = 0;
             }
-            if (Seconds <= 0)
+            if (Seconds == 60)
             {
-                Minutes -= 1;
-                Seconds = 59;
+                Minutes = Minutes + 1;
+                Seconds = 0;
             }
         }
     }
