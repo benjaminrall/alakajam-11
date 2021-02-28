@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    public float currentBrightness;
+    public float currentBrightness = 0.1f;
     private void Awake()
 	{
 		if (instance != null)
