@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuHandler : MonoBehaviour
 {
@@ -36,5 +37,9 @@ public class PauseMenuHandler : MonoBehaviour
             audioMixer.SetFloat("LikeMasterVolumeOrSomething", volume);
         else
             audioMixer.SetFloat("LikeMasterVolumeOrSomething", -80);
+    }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

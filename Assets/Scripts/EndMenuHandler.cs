@@ -15,6 +15,7 @@ public class EndMenuHandler : MonoBehaviour
     }
     public void LoadMenu()
     {
+        Destroy(GameObject.FindObjectOfType<TimerScript>());
         SceneManager.LoadScene(0);
     }
 }
