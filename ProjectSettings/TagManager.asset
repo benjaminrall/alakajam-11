@@ -11,6 +11,8 @@ TagManager:
   - BoxHole
   - PlayerSpikes
   - LogTrap
+  - Jewel
+  - FallSequence
   layers:
   - Default
   - TransparentFX

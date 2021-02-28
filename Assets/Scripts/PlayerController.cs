@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
             case "Spikes": StartCoroutine(Die("SpikesDeath")); break;
             case "LogTrap": StartCoroutine(Die("LogTrapDeath")); break;
             case "FloorButton": other.gameObject.GetComponent<FloorButton>().Activate(); break;
-            case "Torch": EnableChildren(other.transform); FindObjectOfType<AudioManager>().Play("TorchLit"); break;
+            case "Torch": EnableChildren(other.transform); other.gameObject.GetComponent<Torch>().ActivateToggle(); break;
             case "GameStart": StartCoroutine(gameManager.GameStart()); break;
             case "FallSequence": break;
             case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;

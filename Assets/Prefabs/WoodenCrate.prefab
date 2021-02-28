@@ -126,4 +126,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7b71b90a0246346a61a8a675979da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyedBox: {fileID: 0}
+  destroyedBox: {fileID: 7743889631693082665, guid: e34524bb4065bd44e9646e6d579d2de3, type: 3}
+  affectedObjects: []

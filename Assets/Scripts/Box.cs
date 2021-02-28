@@ -34,7 +34,8 @@ public class Box : MonoBehaviour
     {
         if (destroyedBox)
         {
-            Instantiate(destroyedBox, transform.position, transform.rotation);
+            GameObject db = Instantiate(destroyedBox, transform.position, transform.rotation);
+            db.transform.parent = transform.parent;
         }
         gameObject.SetActive(false);
         Destroy(gameObject);
