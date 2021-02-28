@@ -22,6 +22,7 @@ public class MoveableDoor : InteractableObject
         {
             doorState = -1;
         }
+        FindObjectOfType<AudioManager>().Play("DoorSlide");
     }
 
     private void Update()

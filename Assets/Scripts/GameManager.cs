@@ -53,8 +53,9 @@ public class GameManager : MonoBehaviour
             Quaternion newRotation = Quaternion.AngleAxis(0, Vector3.up);
 
             rockHandler.SetBool("Play", true);
+            FindObjectOfType<AudioManager>().Play("CaveIn");
 
-            while (player.transform.localRotation != new Quaternion(0, 0, 0, -1))
+            while (player.transform.localRotation != new Quaternion(0, 0, 0, -1) && player.transform.localRotation != new Quaternion(0, 0, 0, 0) && player.transform.localRotation != new Quaternion(0, 0, 0, 1))
             {
                 player.transform.localRotation = Quaternion.Slerp(player.transform.rotation, newRotation, .05f);
                 yield return null;

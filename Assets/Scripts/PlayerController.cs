@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
             case "Torch": EnableChildren(other.transform); break;
             case "GameStart": StartCoroutine(gameManager.GameStart()); break;
             case "FallSequence": break;
+            case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;
         }
     }
     private IEnumerator Die(string type)

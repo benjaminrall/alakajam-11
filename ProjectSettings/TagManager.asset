@@ -8,6 +8,9 @@ TagManager:
   - FloorButton
   - Torch
   - GameStart
+  - BoxHole
+  - PlayerSpikes
+  - LogTrap
   layers:
   - Default
   - TransparentFX
