@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: Spikes
     soundType: 2
-    clip: {fileID: 8300000, guid: 035c7e28911374449be23a9fb8036858, type: 3}
+    clip: {fileID: 8300000, guid: a13fbfaba8a60ab4c90dbe7e5d4e6e84, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -97,13 +97,6 @@ MonoBehaviour:
     soundType: 2
     clip: {fileID: 8300000, guid: cd3c3c23c89289446bc332ef9b9f0ba1, type: 3}
     volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: GrassStep
-    soundType: 2
-    clip: {fileID: 8300000, guid: bffbd1e2ade410c44afedb78fad82428, type: 3}
-    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
