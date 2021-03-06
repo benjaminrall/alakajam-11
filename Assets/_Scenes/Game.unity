@@ -1243,39 +1243,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &413625627 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3755258163778833965, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
-  m_PrefabInstance: {fileID: 1074674467}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &413625628
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413625627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4749707353668628313, guid: 064d68fd243d16b4fbcc6c640c1e1698, type: 3}
---- !u!64 &413625629
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413625627}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4749707353668628313, guid: 064d68fd243d16b4fbcc6c640c1e1698, type: 3}
 --- !u!4 &413625632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4563988979625235607, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
@@ -8772,12 +8739,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 724344569}
     m_Modifications:
-    - target: {fileID: 3047215825571594555, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3047215825571594555, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
-      propertyPath: m_IsTrigger
+    - target: {fileID: 2298704925295269529, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
+      propertyPath: active
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3755258163778833965, guid: c82b269b856e7c24eb9c62d9f0a5ee5f, type: 3}
@@ -21588,6 +21551,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 123543231}
     m_Modifications:
+    - target: {fileID: 3049990505412089508, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049990505896376375, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049990506918859791, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3870032197516721488, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
       propertyPath: m_Name
       value: EndRoom

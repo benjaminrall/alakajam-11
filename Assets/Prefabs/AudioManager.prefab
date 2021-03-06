@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: Spikes
     soundType: 2
-    clip: {fileID: 8300000, guid: a13fbfaba8a60ab4c90dbe7e5d4e6e84, type: 3}
+    clip: {fileID: 8300000, guid: 2c97d0fdcb54aa14ebf2a9c776d40630, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   - name: Snap
     soundType: 2
     clip: {fileID: 8300000, guid: a488cd5b1ec2cc84299d351dd88984fa, type: 3}
-    volume: 0.25
+    volume: 0.18
     pitch: 1
     loop: 0
     source: {fileID: 0}
