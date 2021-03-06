@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         previousCheckpoint = startPos;
-        
+
 
         hasJewel = false;
         inJewel = false;
@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter (Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        switch(other.tag)
+        switch (other.tag)
         {
             case "Spikes": StartCoroutine(Die("SpikesDeath")); break;
             case "LogTrap": StartCoroutine(Die("LogTrapDeath")); break;
@@ -49,12 +49,15 @@ public class PlayerController : MonoBehaviour
             case "FallSequence": if (hasJewel) StartCoroutine(gameManager.FallSequence()); break;
             case "Jewel": if (!hasJewel) inJewel = true; break;
             case "PlayerSpikes": StartCoroutine(Die("SpikesDeath")); break;
+            case "ToggleButton": other.gameObject.GetComponent<ToggleableButton>().Activate(); break;
+            case "Checkpoint": gameManager.UpdateCheckpoint(other.gameObject); previousCheckpoint = other.transform.position; break;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Jewel" && inJewel && !hasJewel) inJewel = false;
+        else if (other.tag == "ToggleButton") StartCoroutine(other.gameObject.GetComponent<ToggleableButton>().Deactivate());
     }
 
     public IEnumerator Die(string type)
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<PlayerMovement>().velocity = 0.0f;
         gameManager.FadeIn(deathFadeInDelay);
         yield return new WaitForSeconds(deathFadeInDelay);
+        gameManager.ResetRoom();
         transform.position = previousCheckpoint;
         yield return new WaitForSeconds(deathFadeOutDelay);
         gameManager.FadeOut(deathFadeOutDelay);
@@ -73,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
     private void EnableChildren(Transform parent)
     {
-        foreach(Transform child in parent)
+        foreach (Transform child in parent)
         {
             child.gameObject.SetActive(true);
         }

@@ -105,6 +105,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4563988979625235607}
     m_Modifications:
+    - target: {fileID: 70067895, guid: 7a51a5c6bc2d9734fa9908a7a3a0c9e9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4721476353221378793, guid: 7a51a5c6bc2d9734fa9908a7a3a0c9e9, type: 3}
       propertyPath: m_Name
       value: TorchEnabler

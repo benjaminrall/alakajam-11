@@ -13,6 +13,8 @@ TagManager:
   - LogTrap
   - Jewel
   - FallSequence
+  - ToggleButton
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

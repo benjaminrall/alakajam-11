@@ -46,14 +46,14 @@ MonoBehaviour:
   sounds:
   - name: Spikes
     soundType: 2
-    clip: {fileID: 8300000, guid: a13fbfaba8a60ab4c90dbe7e5d4e6e84, type: 3}
+    clip: {fileID: 8300000, guid: 035c7e28911374449be23a9fb8036858, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SpikesDeath
     soundType: 2
-    clip: {fileID: 8300000, guid: 9659f9a73e3fa534485adedddc6e9fc6, type: 3}
+    clip: {fileID: 8300000, guid: 25e97b2f5e021f247ab515ea9434d0a7, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -110,6 +110,20 @@ MonoBehaviour:
   - name: VibrationRumble
     soundType: 2
     clip: {fileID: 8300000, guid: a7d81c105e9174546b28c6390fd347a8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Snap
+    soundType: 2
+    clip: {fileID: 8300000, guid: a488cd5b1ec2cc84299d351dd88984fa, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LogTrapDeath
+    soundType: 2
+    clip: {fileID: 8300000, guid: 25e97b2f5e021f247ab515ea9434d0a7, type: 3}
     volume: 1
     pitch: 1
     loop: 0
