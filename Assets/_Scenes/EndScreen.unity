@@ -990,9 +990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
-
-'
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86ec939173628994eae8aa1b8d8b97e2, type: 2}
   m_sharedMaterial: {fileID: 3842736498812758409, guid: 86ec939173628994eae8aa1b8d8b97e2, type: 2}
@@ -10945,7 +10943,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000019073, y: -312}
-  m_SizeDelta: {x: 324.06567, y: 155.6295}
+  m_SizeDelta: {x: 438.52, y: 155.6295}
   m_Pivot: {x: 0.5, y: 0.49999964}
 --- !u!114 &2035136500
 MonoBehaviour:
