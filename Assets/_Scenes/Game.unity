@@ -24526,6 +24526,14 @@ PrefabInstance:
       propertyPath: delay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7747367980036247330, guid: c7a27f61aee2d84439d7400966b06581, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -5206722529582269343, guid: f224a623fdfbf0a41bd418d0f89ff033, type: 3}
+    - target: {fileID: 7747367980036247333, guid: c7a27f61aee2d84439d7400966b06581, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4010311689987538059, guid: f224a623fdfbf0a41bd418d0f89ff033, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a27f61aee2d84439d7400966b06581, type: 3}
 --- !u!1 &7747367979169613674 stripped
