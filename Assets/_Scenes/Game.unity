@@ -2623,6 +2623,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &888384965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6092911105614445569, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+  m_PrefabInstance: {fileID: 1735372260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &895488370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3870032197516721491, guid: 40cf3cdab23e7cf4786dac3cce8f95cb, type: 3}
@@ -9396,6 +9401,10 @@ PrefabInstance:
       propertyPath: decelerationTime
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: rotationTransform
+      value: 
+      objectReference: {fileID: 888384965}
     - target: {fileID: 6092911105430253144, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: jewel
       value: 
