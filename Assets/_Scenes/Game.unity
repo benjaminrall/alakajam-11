@@ -9238,6 +9238,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: decelerationTime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6092911105430253144, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: jewel
       value: 
@@ -25203,25 +25207,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7d625d071adbd54a84692f4a6ac8e57, type: 3}
---- !u!1 &9004214341103902704 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 392418490842472054, guid: f7d625d071adbd54a84692f4a6ac8e57, type: 3}
-  m_PrefabInstance: {fileID: 9004214341103902703}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &9004214341103902705
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9004214341103902704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2228417370725966487, guid: f224a623fdfbf0a41bd418d0f89ff033, type: 3}
 --- !u!1 &9014776604028190092
 GameObject:
   m_ObjectHideFlags: 0
