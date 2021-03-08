@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
             while (player.transform.localRotation != new Quaternion(0, 0, 0, -1) && player.transform.localRotation != new Quaternion(0, 0, 0, 0) && player.transform.localRotation != new Quaternion(0, 0, 0, 1))
             {
-                player.transform.localRotation = Quaternion.Slerp(player.transform.rotation, newRotation, .05f);
+                player.transform.localRotation = Quaternion.Slerp(player.transform.rotation, newRotation, Time.deltaTime * player.GetComponent<PlayerMovement>().turnTime);
                 yield return null;
             }
 
