@@ -9398,8 +9398,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: turnTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: acceleration
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: footstepDelay
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: maxRunningSpeed
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: maxWalkingSpeed
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
+      propertyPath: accelerationTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: decelerationTime
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6092911105430253143, guid: 43896f6fb7033744ea0f0f89c923c972, type: 3}
       propertyPath: rotationTransform

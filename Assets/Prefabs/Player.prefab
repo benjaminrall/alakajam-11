@@ -709,7 +709,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1111,11 +1111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574fa293cdbe8bb499e2446ae78ff204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWalkingSpeed: 3
-  maxRunningSpeed: 3
-  accelerationTime: 65
-  decelerationTime: 50
-  footstepDelay: 0.6
+  maxWalkingSpeed: 3.2
+  maxRunningSpeed: 3.2
+  decelerationTime: 2
+  turnTime: 5
+  footstepDelay: 0.55
+  acceleration: 50
   velocity: 0
 --- !u!114 &6092911105430253144
 MonoBehaviour:

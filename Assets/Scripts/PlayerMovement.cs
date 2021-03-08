@@ -9,13 +9,15 @@ public class PlayerMovement : MonoBehaviour
     public float maxWalkingSpeed;
     public float maxRunningSpeed;
     
-    public float accelerationTime;
+    //public float accelerationTime;
     public float decelerationTime;
+
+    public float turnTime;
 
     public float footstepDelay;
     private float footstepTimer;
     
-    private float acceleration;
+    public float acceleration;
     private float deceleration;
 
     [HideInInspector]
@@ -32,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         maxVelocity = maxWalkingSpeed;
-        acceleration = maxVelocity / (accelerationTime);
         deceleration = maxVelocity / (decelerationTime);
         running = false;
         ax = 0.0f;
@@ -59,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
         if (ax > 0 && velocity >= 0 && !decelerating)
         {
             Quaternion newRotation = Quaternion.AngleAxis(0, Vector3.up);
-            transform.localRotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);
-            velocity += acceleration;
+            transform.localRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnTime);
+            velocity += acceleration * Time.deltaTime;
             if (velocity > maxVelocity * ax)
             {
                 velocity = maxVelocity * ax;
@@ -70,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
         else if (ax < 0 && velocity <= 0 && !decelerating)
         {
             Quaternion newRotation = Quaternion.AngleAxis(180, Vector3.up);
-            transform.localRotation = Quaternion.Slerp(transform.rotation, newRotation, .05f);
-            velocity -= acceleration;
+            transform.localRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnTime);
+            velocity -= acceleration * Time.deltaTime;
             if (velocity < maxVelocity * ax)
             {
                 velocity = maxVelocity * ax;
