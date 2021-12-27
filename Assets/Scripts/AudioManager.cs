@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
 		{
 			if (instance != this)
 			{
-				Destroy(this.gameObject);
+				Destroy(gameObject);
 			}
 		}
 		else
@@ -59,12 +59,13 @@ public class AudioManager : MonoBehaviour
             {
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
-                if (s.soundType == SoundType.MASTER) 
-                    s.source.outputAudioMixerGroup  = masterMixer;
-                else if (s.soundType == SoundType.MUSIC)
-                    s.source.outputAudioMixerGroup  = musicMixer;
-                else if (s.soundType == SoundType.SOUND)
-                    s.source.outputAudioMixerGroup  = soundMixer;
+                s.source.outputAudioMixerGroup = s.soundType switch
+                {
+                    SoundType.MASTER => masterMixer,
+                    SoundType.MUSIC => musicMixer,
+                    SoundType.SOUND => soundMixer,
+                    _ => s.source.outputAudioMixerGroup
+                };
                 s.source.volume = s.volume;
                 s.source.pitch = s.pitch;
                 s.source.loop = s.loop;
@@ -72,23 +73,23 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
-    public void Play (string name)
+    public void Play (string soundName)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
         if (s == null) 
         {
-            Debug.LogError($"Sound {name} not found.");
+            Debug.LogError($"Sound {soundName} not found.");
             return;
         }
         s.source.Play();
     }
 
-    public void PlayAt(string name, Vector3 location)
+    public void PlayAt(string soundName, Vector3 location)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
         if (s == null)
         {
-            Debug.LogError($"Sound {name} not found.");
+            Debug.LogError($"Sound {soundName} not found.");
             return;
         }
         AudioSource.PlayClipAtPoint(s.clip, location);
