@@ -1,4 +1,4 @@
-## Alakajam 11: Relic of the Past
+# Alakajam 11: Relic of the Past
 
 ![Cover image](https://github.com/user-attachments/assets/48312115-0bb7-40d0-9dd4-48d24807a7dc)
 
