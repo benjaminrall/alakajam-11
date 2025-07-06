@@ -7,3 +7,6 @@ Relic of the Past is a short 2.5D puzzle-adventure game, where you're tasked to 
 It was made in 48 hours for Alakajam 11, with the theme 'Ancient Ruins'. Our team placed 1st for Theme and 2nd for Graphics.
 
 Our Alakajam page can be found [here](https://alakajam.com/11th-alakajam/1057/relic-of-the-past/), and the game can be played [here](https://thetacbanana.itch.io/relic-of-the-past).
+
+## License
+This project is licensed under the **MIT License**. See the [`LICENSE`](./LICENSE) file for details.
